@@ -1,7 +1,9 @@
+<h1 *ngIf="authService.currentUser$ | async as user">Welcome to Lets Chat , {{user.displayName}}</h1>
+
 <div class="main-container w-full flex">
 
-  <div class="users bg-blue-200 drop-shadow-md"></div>
+  <div class="users bg-blue-200 mat-elevation-z5"></div>
 
-  <div class="mesgs drop-shadow-md"></div>
+  <div class="mesgs mat-elevation-z5"></div>
 
 </div>

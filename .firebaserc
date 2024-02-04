@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "lets-chat-b4137": {
+      "hosting": {
+        "lets-chat": [
+          "lets-chat-b4137"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "lets-chat-b4137"
+  }
+}

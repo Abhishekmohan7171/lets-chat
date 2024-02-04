@@ -1,4 +1,19 @@
+@use 'node_modules/@ngneat/hot-toast/src/styles/styles.scss';
+
+
 /* You can add global styles to this file, and also import other style files */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+// @import '~@ngneat/hot-toast/src/styles/styles.scss'
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@import '~@angular/material/prebuilt-themes/purple-green.css';
+// deeppurple-amber.css
+// indigo-pink.css
+// pink-bluegrey.css
+// purple-green.css
+

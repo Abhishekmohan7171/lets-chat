@@ -1,0 +1,18 @@
+<div class="form-container mat-elevation-z5">
+    <h1 class="text-center">Login</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+      <mat-form-field>
+        <input matInput formControlName="email" type="email" placeholder="Enter email here" />
+        <mat-error *ngIf="email?.errors?.['required']">Email address is required.</mat-error>
+        <mat-error *ngIf="email?.errors?.['email']">Please enter a correct email format.</mat-error>
+      </mat-form-field>
+      <mat-form-field class="margin-top">
+        <input type="password" matInput formControlName="password" placeholder="Enter password here" />
+        <mat-error *ngIf="password?.errors?.['required']">Password is required.</mat-error>
+      </mat-form-field>
+      <div class="center margin-top">
+        <button mat-raised-button color="primary" class="text-white bg-purple-800 px-3 py-1.5 rounded-[3px] drop-shadow-md">Login</button>
+      </div>
+      <span class="center margin-top">New to Lets Chat?  <a class="text-purple-800 pl-2" routerLink="sign-up">Sign Up!</a></span>
+    </form>
+</div>

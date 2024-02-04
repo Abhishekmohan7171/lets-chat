@@ -1,0 +1,27 @@
+<div class="form-container mat-elevation-z5">
+  <h1 class="text-center">Sign up a new user</h1>
+  <form [formGroup]="signupForm" (ngSubmit)="submit()">
+    <mat-form-field class="margin-top">
+      <input type="text" matInput formControlName="name" placeholder="Enter name here" />
+      <mat-error *ngIf="password?.errors?.['required']">Name is required.</mat-error>
+    </mat-form-field>
+    <mat-form-field class="margin-top">
+      <input matInput formControlName="email" type="email" placeholder="Enter email here" />
+      <mat-error *ngIf="email?.errors?.['required']">Email address is required.</mat-error>
+      <mat-error *ngIf="email?.errors?.['email']">Please enter a correct email format.</mat-error>
+    </mat-form-field>
+    <mat-form-field class="margin-top">
+      <input type="password" matInput formControlName="password" placeholder="Enter password here" />
+      <mat-error *ngIf="password?.errors?.['required']">Password is required.</mat-error>
+    </mat-form-field>
+    <mat-form-field class="margin-top">
+      <input type="password" matInput formControlName="confirmPassword" placeholder="Confirm password here" />
+      <mat-error *ngIf="confirmPassword?.errors?.['required']">Confirm Password is required.</mat-error>
+    </mat-form-field>
+    <mat-error *ngIf="signupForm?.errors?.['passwordsDontMatch']">Passwords should match.</mat-error>
+    <div class="center margin-top">
+      <button mat-raised-button color="primary" class="text-white bg-purple-800 px-3 py-1.5 rounded-[3px] drop-shadow-md">Sign Up</button>
+    </div>
+    <span class="center margin-top">Already a user?  <a class="text-purple-800 pl-2" routerLink="login">Login</a></span>
+  </form>
+</div>
