@@ -9,10 +9,10 @@
       <mat-form-field class="margin-top">
         <input type="password" matInput formControlName="password" placeholder="Enter password here" />
         <mat-error *ngIf="password?.errors?.['required']">Password is required.</mat-error>
-      </mat-form-field>
-      <div class="center margin-top">
-        <button mat-raised-button color="primary" class="text-white bg-purple-800 px-3 py-1.5 rounded-[3px] drop-shadow-md">Login</button>
+      </mat-form-field><div class="center margin-top">
+        <button mat-raised-button color="primary" class="">Login</button>
       </div>
+
       <span class="center margin-top">New to Lets Chat?  <a class="text-purple-800 pl-2" routerLink="sign-up">Sign Up!</a></span>
     </form>
 </div>

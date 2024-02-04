@@ -6,5 +6,12 @@
       <mat-icon>edit</mat-icon>
     </button>
   </div>
+
+  <p class="pt-6 text-[30px]">{{user.displayName}}</p>
+
+  <div class="">
+    <button mat-raised-button color="primary" (click)="logout()" class="">Logout</button>
+  </div>
+
   <input #inputField type="file" hidden (change)="uploadImage($event, user)">
 </div>
