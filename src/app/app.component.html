@@ -4,9 +4,12 @@
 
   <ng-container *ngIf="authService.currentUser$ | async as user; else loginbutton">
     <button mat-button [matMenuTriggerFor]="userMenu" (click)="logout()" class="items-center flex gap-2 cursor-pointer">
-      <mat-icon>account_circle</mat-icon>
-      {{user.displayName}}
-      <mat-icon>expand_more</mat-icon>
+      <!-- <mat-icon>account_circle</mat-icon> -->
+      <div class="flex gap-2 items-center">
+          <img width="30" height="30" class="rounded-[100%]" [src]="user.photoURL" alt="">
+        <div>{{user.displayName}}</div>
+        <mat-icon>expand_more</mat-icon>
+      </div>
     </button>
   </ng-container>
 
@@ -26,4 +29,5 @@
 
 <mat-menu #userMenu="matMenu">
   <button mat-menu-item (click)="logout()">Logout</button>
+  <button mat-menu-item routerLink="/profile">Profile</button>
 </mat-menu>

@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { LandingComponent } from './landing/landing.component';
 import {canActivate, redirectUnauthorizedTo,redirectLoggedInTo} from '@angular/fire/auth-guard'
+import { ProfileComponent } from './profile/profile.component';
 
 const redirectToLogin = () => redirectUnauthorizedTo(['login'])
 const redirectToHome = () => redirectLoggedInTo(['home'])
@@ -31,6 +32,11 @@ const routes: Routes = [
     component: SignUpComponent,
     ...canActivate(redirectToHome)
   },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    ...canActivate(redirectToLogin)
+  }
 ];
 
 @NgModule({

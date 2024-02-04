@@ -11,6 +11,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
 import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
@@ -20,6 +21,8 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { HotToastModule } from '@ngneat/hot-toast';
+import { getStorage, provideStorage } from '@angular/fire/storage';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import { HotToastModule } from '@ngneat/hot-toast';
     HomeComponent,
     LandingComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -39,11 +43,13 @@ import { HotToastModule } from '@ngneat/hot-toast';
     MatFormFieldModule,
     MatInputModule,
     MatMenuModule,
+    MatButtonModule,
     HotToastModule.forRoot(),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage())
   ],
   providers: [],
   bootstrap: [AppComponent]
